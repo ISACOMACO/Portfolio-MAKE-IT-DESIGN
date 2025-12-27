@@ -1,14 +1,102 @@
+/* =========================
+   HERO (RECTÁNGULO NEGRO SUPERIOR)
+========================= */
 .hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-left: 1vw;
-  background: #f5f5f5;
-}
-
-.hero-title-container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  z-index: 1000;
+}
+
+/* Bloque negro superior */
+.hero-top {
+  background: #000; /* Fondo negro */
+  width: 100%;
+  padding: 2rem 2vw;
+  display: flex;
+  justify-content: space-between; /* About Me izquierda, menú centrado */
+  align-items: center;
+}
+
+/* =========================
+   BLOQUE ABOUT ME (A LA IZQUIERDA, MÁS A LA DERECHA)
+========================= */
+.hero .hero-top .hero-about {
+  font-family: "YourFont", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-left: 3vw; /* Más a la derecha que antes */
+  color: #ffffff !important; /* FORZADO blanco */
+}
+
+/* =========================
+   HERO MENU (centrado)
+========================= */
+.hero-menu {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.hero-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-menu a {
+  font-family: "YourFont", sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #fff; /* Letras blancas */
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.hero-menu a:hover {
+  opacity: 1;
+}
+
+/* =========================
+   BLOQUE SECCIONES CENTRADAS DEL HERO
+========================= */
+.hero-sections {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  gap: 4rem; /* Espacio entre secciones */
+  margin-top: 2rem;
+}
+
+.hero-sections a {
+  font-family: "YourFont", sans-serif;
+  font-size: 1.8rem; /* Tamaño de las secciones */
+  font-weight: bold;
+  color: #fff; /* Blanco */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-sections a:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   TÍTULO PORTFOLIO (debajo del bloque negro)
+========================= */
+.hero-title-container {
+  align-self: flex-start;
+  margin: 25vh 2vw; /* Separación desde el bloque negro */
+  background: #fff; /* Fondo blanco */
+  padding: 1rem;
 }
 
 .hero h1 {
@@ -18,46 +106,132 @@
   margin: 0;
   display: flex;
   flex-direction: column;
+  color: #000; /* Letras negras */
 }
 
 .hero h1 .line {
   display: flex;
   align-items: flex-end;
-  font-size: clamp(32vh, 35vh, 55vh); /* PORT y FOLIO muy grandes */
+  font-size: clamp(32vh, 38vh, 52vh);
 }
 
 .hero h1 .folio-line {
   position: relative;
   display: flex;
-  align-items: flex-end; /* Alinea verticalmente con la O */
+  align-items: flex-end;
 }
 
-/* Subtítulo al lado de la O con animación */
+/* =========================
+   SUBTÍTULO (ANIMADO)
+========================= */
 .hero-subtitle {
-  font-size: 32px; /* Tamaño grande, proporcional */
+  font-size: 32px;
   font-weight: normal;
   margin-left: 0.5rem;
   white-space: nowrap;
-
   position: relative;
   display: inline-block;
+  color: #000; /* Letras negras */
 
-  /* Empieza invisible */
   opacity: 0;
 
-  /* Animación */
   animation: slideFromO 1.5s ease forwards;
-  animation-delay: 1.4s; /* Aparece después de 1,4 segundos */
+  animation-delay: 1.4s;
 }
 
-/* Animación desde la O hasta su posición final */
 @keyframes slideFromO {
-  0% {
-    transform: translateX(-100%); /* Comienza desde la O */
+  from {
+    transform: translateX(-100%);
     opacity: 0;
   }
-  100% {
-    transform: translateX(0); /* Termina en su posición final */
+  to {
+    transform: translateX(0);
     opacity: 1;
   }
+}
+/* =========================
+   SECCIÓN DE IMAGEN
+========================= */
+
+/* SECCIÓN DE IMAGEN AJUSTADA */
+.image-section {
+  padding-top: 10px; /* MUCHO más cerca del PORTFOLIO */
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.image-section .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.center-image-large {
+  max-width: 78%;
+  height: auto;
+}
+
+/* =========================
+   SECCIONES DEL PORTFOLIO
+========================= */
+.section {
+  padding: 8vh 2vw;
+  width: 100%;
+}
+
+/* ABOUT ME SECCIÓN */
+/* =========================
+   ABOUT ME
+========================= */
+.about-me {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  text-align: left; /* Alinea todo a la izquierda */
+}
+
+.about-me .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left; /* Refuerza alineación a la izquierda */
+}
+
+.about-title {
+  font-family: "TuTipografiaDePortfolio", sans-serif; /* Igual que Portfolio */
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: #111;
+  text-align: left; /* Alineación título a la izquierda */
+}
+
+.about-me p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.2rem;
+}
+
+/* OTROS APARTADOS */
+.graphic-design {
+  background: #fff9f2;
+}
+.illustration {
+  background: #f2f9ff;
+}
+.photography {
+  background: #f9fff2;
+}
+.threed {
+  background: #fff2f9;
+}
+
+.section h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
