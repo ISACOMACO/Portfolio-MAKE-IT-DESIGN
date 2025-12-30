@@ -60,26 +60,6 @@
   opacity: 1;
 }
 
-/* SECCIONES HERO */
-.hero-sections {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  margin-top: 2rem;
-}
-
-.hero-sections a {
-  font-family: "YourFont", sans-serif;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-}
-
-.hero-sections a:hover {
-  opacity: 0.8;
-}
-
 /* TÍTULO PORTFOLIO */
 .hero-title-container {
   align-self: flex-start;
@@ -141,7 +121,6 @@
   align-items: center;
 }
 
-/* Logo SIEMPRE por delante */
 .center-image-large {
   max-width: 78%;
   height: auto;
@@ -164,7 +143,6 @@
   transform: translateY(-50%);
 }
 
-/* Posición inicial (nacen detrás del logo) */
 .word.left {
   left: 50%;
 }
@@ -185,18 +163,70 @@
   margin-bottom: 2rem;
 }
 
+/* =========================
+   QUIÉN SOY + FOTO ANIMADA + DEGRADADO
+========================= */
 .quien-soy {
+  position: relative;
+  overflow: hidden;
   padding: 80px 20px;
   background-color: #f9f9f9;
 }
 
+.quien-soy-degradado {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+  z-index: 0;
+  transform: translateX(0);
+  transition: transform 0.2s ease-out;
+}
+
 .quien-soy .container {
   max-width: 750px;
+  position: relative;
+  z-index: 2;
 }
 
 .quien-soy p {
   font-size: 1.5rem;
   line-height: 1.7;
+}
+
+.foto-container {
+  position: absolute;
+  top: 50%;
+  right: -350px;
+  transform: translateY(-50%);
+  z-index: 1;
+  transition: transform 0.2s ease-out;
+}
+
+.foto-container .foto {
+  max-width: 1000px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+  .foto-container {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .foto-container .foto {
+    max-width: 90%;
+  }
 }
 
 /* =========================
@@ -226,10 +256,10 @@
   border: none;
   cursor: pointer;
 }
+
 /* =========================
    SECCIÓN CONTACTO
 ========================= */
-
 .contact-section {
   background-color: #000;
   color: #fff;
@@ -244,22 +274,18 @@
   margin: 0 auto;
 }
 
-/* =========================
-   SECCIÓN CONTACTO AJUSTES TÍTULO
-========================= */
-
 .contact-text h2 {
-  font-size: 4rem; /* más grande */
-  margin-bottom: 30px; /* más separación del texto */
-  text-align: left; /* alineación al margen izquierdo */
+  font-size: 4rem;
+  margin-bottom: 30px;
+  text-align: left;
 }
 
 .contact-text p {
-  font-size: 1.5rem; /* texto más grande */
+  font-size: 1.5rem;
   line-height: 1.8;
   opacity: 0.9;
-  text-align: left; /* alineación al margen izquierdo */
-  max-width: 500px; /* opcional: que no se extienda demasiado */
+  text-align: left;
+  max-width: 500px;
 }
 
 .contact-social {
@@ -282,7 +308,6 @@
 }
 
 /* FORMULARIO */
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -323,25 +348,283 @@
   background-color: #ddd;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .contact-text h2 {
-    font-size: 2.4rem;
-  }
-} /* =========================
-   FOOTER CONTACTO
-========================= */
-
+/* FOOTER CONTACTO */
 .contact-footer {
   margin-top: 100px;
   padding-top: 40px;
   text-align: center;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.back-to-top {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 100px;
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #e5e5e5;
+}
+
+.footer-repo-link {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.footer-repo-link:hover {
+  opacity: 1;
+}
+
+/* =========================
+   ILLUSTRATION
+========================= */
+.illustration {
+  position: relative;
+  flex: 1;
+  margin: 0;
+}
+
+.illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+  border-radius: 25px;
+}
+
+.illustration .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 25px 40px;
+  border-radius: 20px;
+}
+
+.illustration:hover img {
+  transform: scale(1.07);
+}
+
+.illustration:hover .overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* =========================
+   SECCIÓN 3D
+========================= */
+/* =========================
+   TÍTULO SECCIÓN 3D
+========================= */
+.titulo-3d {
+  width: 100%;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* =========================
+   CONTENIDO SECCIÓN 3D
+========================= */
+/* =========================
+   GLASSMORPHISM PARA EL TEXTO
+========================= */
+.texto-glass {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.15); /* fondo semitransparente */
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* un poco más de espacio entre elementos */
+}
+
+.texto-glass p {
+  font-size: 1.5rem; /* antes 1.3rem, ahora más grande */
+  line-height: 1.9;
+  color: #000; /* texto negro */
+}
+
+/* Links dentro del recuadro */
+.links-3d {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* un poco más de espacio entre links */
+}
+
+.links-3d a {
+  color: #000; /* links en negro */
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1.4rem; /* antes 1.2rem, ahora más grande */
+}
+
+.links-3d a:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   CONTENIDO SECCIÓN 3D
+========================= */
+.seccion-3d {
+  padding: 60px 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  color: #fff;
+  font-family: "YourFont", sans-serif;
+}
+
+.seccion-3d .titulo-3d {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #fff; /* Asegura que sea visible */
+}
+
+.contenido-3d {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.imagen-3d img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.texto-glass {
+  flex: 1;
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(20px);
+  padding: 25px 35px;
+  border-radius: 25px;
+  color: #000; /* Texto negro dentro del glass */
+  font-size: 1.3rem;
+}
+
+.links-3d a {
+  display: block;
+  margin-top: 15px;
+  font-size: 1.4rem;
+  color: #000;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .contenido-3d {
+    flex-direction: column;
+    text-align: center;
+  }
+  .imagen-3d img {
+    margin: 0 auto;
+  }
+  .texto-glass {
+    margin: 0 auto;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contenido-3d {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .texto-glass {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .texto-glass p {
+    font-size: 1.4rem; /* más grande en móvil también */
+  }
+
+  .links-3d a {
+    font-size: 1.3rem; /* más grande en móvil */
+  }
+}
+
+/* RESPONSIVE: imagen arriba del texto en móviles */
+@media (max-width: 900px) {
+  .seccion-3d {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .texto-3d {
+    max-width: 100%;
+  }
+}
+.titulo-3d {
+  width: 100%;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #fff;
+}
+/* FOOTER CONTACTO – BOTÓN Y LINK MÁS GRANDES */
+
+.back-to-top {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  padding: 18px 42px; /* más grande */
+  border-radius: 40px;
+  font-size: 1.3rem; /* antes 1rem */
+  font-weight: 600;
+  margin-bottom: 100px;
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #e5e5e5;
+  transform: scale(1.05); /* ligero énfasis al hover */
+}
+
+/* Link repositorio */
+.footer-repo-link {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 1.2rem; /* antes 0.95rem */
+  font-weight: 500;
+  opacity: 0.95;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-repo-link:hover {
+  opacity: 1;
+  transform: scale(1.03);
 }

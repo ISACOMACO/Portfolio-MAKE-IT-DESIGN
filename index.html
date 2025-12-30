@@ -11,15 +11,12 @@
       type="image/jpeg"
     />
   </head>
-
   <body>
     <main id="main">
       <!-- HERO / LANDING -->
       <section id="hero" class="hero">
         <div class="hero-top">
-          <div class="hero-about">
-            <a href="#quien-soy">Quién soy</a>
-          </div>
+          <div class="hero-about"><a href="#quien-soy">Quién soy</a></div>
           <nav class="hero-menu">
             <ul>
               <li><a href="#graphic-design">Diseño gráfico</a></li>
@@ -30,57 +27,29 @@
             </ul>
           </nav>
         </div>
-
         <div class="hero-title-container">
           <h1 class="hero-title">
             <span class="line">PORT</span>&nbsp;&nbsp;
-            <span class="line folio-line">
-              FOLIO
+            <span class="line folio-line"
+              >FOLIO
               <span class="hero-subtitle">Isaac Piña Portillo</span>
             </span>
           </h1>
         </div>
       </section>
 
-      <!-- SECCIÓN LOGO CON TEXTO ANIMADO -->
+      <!-- LOGO CON TEXTO ANIMADO -->
       <section id="image-section" class="image-section">
         <div class="logo-container">
           <span class="word left">Diseñador</span>
-
           <img
             src="https://ik.imagekit.io/ig1zyhrhpc/LOGO%20ISAAC-02.png"
             alt="Isaac Logo"
             class="center-image-large"
           />
-
           <span class="word right">Creativo</span>
         </div>
       </section>
-
-      <!-- JAVASCRIPT ANIMACIÓN SCROLL LOGO -->
-      <script>
-        const section = document.getElementById("image-section");
-        const leftWord = document.querySelector(".word.left");
-        const rightWord = document.querySelector(".word.right");
-
-        window.addEventListener("scroll", () => {
-          const rect = section.getBoundingClientRect();
-          const windowHeight = window.innerHeight;
-
-          let progress = 1 - rect.top / windowHeight;
-          progress = Math.min(Math.max(progress, 0), 1);
-
-          // Más desplazamiento lateral
-          const distance = progress * 350;
-
-          leftWord.style.opacity = progress;
-          rightWord.style.opacity = progress;
-
-          // Salen desde detrás del logo hacia los lados
-          leftWord.style.transform = `translate(-${distance}px, -50%)`;
-          rightWord.style.transform = `translate(${distance}px, -50%)`;
-        });
-      </script>
 
       <!-- QUIÉN SOY -->
       <section id="quien-soy" class="section quien-soy">
@@ -98,24 +67,61 @@
             asertiva.
           </p>
         </div>
+        <div class="foto-container">
+          <img
+            src="https://ik.imagekit.io/ig1zyhrhpc/foto%20mia%20web.png"
+            alt="Foto mía"
+            class="foto"
+          />
+        </div>
       </section>
 
-      <!-- DISEÑO GRÁFICO -->
+      <!-- SECCIONES PORTFOLIO -->
       <section id="graphic-design" class="section graphic-design">
-        <div class="container">
-          <h2>Diseño Gráfico</h2>
-        </div>
-        
+        <div class="container"><h2>Diseño Gráfico</h2></div>
       </section>
 
-      <!-- ILUSTRACIÓN -->
       <section id="illustration" class="section illustration">
-        <div class="container">
-          <h2>Ilustración</h2>
+        <div class="container"><h2>Ilustración</h2></div>
+        <div style="display: flex; width: 100vw; margin: 0; padding: 0">
+          <div style="flex: 1; margin: 0">
+            <img
+              src="https://ik.imagekit.io/ig1zyhrhpc/I1.png?updatedAt=1766928279612"
+              alt="Ilustración 1"
+              style="width: 100%; height: auto; display: block"
+            />
+          </div>
+          <div style="display: flex; width: 100vw; margin: 0; padding: 0">
+            <!-- Ilustración 1 -->
+            <div class="illustration">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/I1.png?updatedAt=1766928279612"
+                alt="Ilustración 1"
+              />
+              <div class="overlay">Ilustración de San Francisco</div>
+            </div>
+
+            <!-- Ilustración 3 -->
+            <div class="illustration">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/I3.png?updatedAt=1766928480994"
+                alt="Ilustración 3"
+              />
+              <div class="overlay">Ilustración para Premios Forqué 2023</div>
+            </div>
+
+            <!-- Ilustración 2 -->
+            <div class="illustration">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/I2.png?updatedAt=1766928468199"
+                alt="Ilustración 2"
+              />
+              <div class="overlay">Ilustración de Madrid</div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- FOTOGRAFÍA -->
       <section id="photography" class="section photography">
         <div class="photography-container">
           <div class="photography-left">
@@ -129,7 +135,6 @@
               <button id="nextBtn" class="carousel-btn">→</button>
             </div>
           </div>
-
           <div class="photography-right">
             <p>
               La fotografía me permite congelar momentos y espacios que me
@@ -147,15 +152,126 @@
         </div>
       </section>
 
-      <!-- 3D -->
-      <section id="3d" class="section threed">
-        <div class="container">
-          <h2>3D</h2>
+      <!-- SECCIÓN 3D -->
+      <!-- SECCIÓN 3D -->
+      <section id="3d" class="seccion-3d">
+        <!-- Título de la sección -->
+        <h2 class="titulo-3d">Proyectos 3D</h2>
+
+        <!-- Contenido de la sección -->
+        <div class="contenido-3d">
+          <!-- Imagen a la izquierda -->
+          <div class="imagen-3d">
+            <img
+              src="https://ik.imagekit.io/ig1zyhrhpc/Captura%20de%20pantalla%202025-12-30%20a%20las%201.59.52.png"
+              alt="Proyectos 3D"
+            />
+          </div>
+
+          <!-- Texto dentro de un recuadro glassmorphism a la derecha -->
+          <div class="texto-glass">
+            <p>
+              Con el uso de <strong>Unreal Engine 5</strong>, he creado
+              diferentes videos con elementos en 3D. Desde spots publicitarios
+              para zapatillas <strong>NIKE</strong> hasta una propuesta del
+              exterior del cine <strong>Kinepolis</strong> en Amberes, Bélgica
+              para el estreno de la película <strong>Interstellar</strong>.
+              <br /><br />
+              Estos implican diseño de escenario, (escaneo), walkthrough, teaser
+              trailer y posterior edición de vídeo.
+            </p>
+
+            <!-- Links debajo del texto -->
+            <div class="links-3d">
+              <a href="https://short.do/sA_YeX" target="_blank">Proyecto 1</a>
+              <a href="https://short.do/_Srw7V" target="_blank">Proyecto 2</a>
+              <a href="https://short.do/vAc7Rl" target="_blank">Proyecto 3</a>
+            </div>
+          </div>
         </div>
       </section>
 
-    <!-- JAVASCRIPT CARRUSEL -->
+      <!-- CONTACTO -->
+      <section id="contacto" class="contact-section">
+        <div class="contact-container">
+          <div class="contact-text">
+            <h2>Hablemos 👋</h2>
+            <p>
+              ¿Tienes un proyecto en mente, una idea o simplemente quieres
+              saludar? Escríbeme y te responderé lo antes posible.
+            </p>
+            <div class="contact-social">
+              <p>
+                📍 Dirección:
+                <span>Calle Povedilla 15, 2, 3. 28009, Madrid, España</span>
+              </p>
+              <p>
+                📸 Instagram:
+                <a
+                  href="https://instagram.com/_isaac.portilloo_"
+                  target="_blank"
+                  >@_isaac.portilloo_</a
+                >
+              </p>
+              <p>
+                💼 LinkedIn:
+                <a
+                  href="https://www.linkedin.com/in/isaac-piña-portillo/"
+                  target="_blank"
+                  >Isaac Piña Portillo</a
+                >
+              </p>
+            </div>
+          </div>
+          <form
+            class="contact-form"
+            action="mailto:tucorreo@email.com"
+            method="POST"
+            enctype="text/plain"
+          >
+            <input type="text" name="name" placeholder="Tu nombre" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Tu correo electrónico"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Tu mensaje"
+              required
+            ></textarea>
+            <button type="submit">Enviar mensaje</button>
+          </form>
+        </div>
+
+        <div class="contact-footer">
+          <a
+            href="https://github.com/ISACOMACO/Portfolio_Isaac_Pina_Portillo"
+            target="_blank"
+            class="footer-repo-link"
+            >Ver repositorio en GitHub</a
+          >
+          <br /><br />
+          <button
+            class="back-to-top"
+            onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+          >
+            Inicio
+          </button>
+          <p>© 2025 Isaac Piña Portillo. All rights reserved.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPTS -->
     <script>
+      // Animación logo central
+      const section = document.getElementById("image-section");
+      const leftWord = document.querySelector(".word.left");
+      const rightWord = document.querySelector(".word.right");
+
+      // Carrusel de fotos
       const images = [
         "https://ik.imagekit.io/ig1zyhrhpc/IMG_0882.jpeg",
         "https://ik.imagekit.io/ig1zyhrhpc/IMG_0891.jpeg",
@@ -163,63 +279,44 @@
         "https://ik.imagekit.io/ig1zyhrhpc/IMG_0608.jpeg",
         "https://ik.imagekit.io/ig1zyhrhpc/IMG_0391.jpeg",
       ];
-
       let currentIndex = 0;
       const carouselImage = document.getElementById("carouselImage");
       const nextBtn = document.getElementById("nextBtn");
+
+      // Sección "Quién soy"
+      const fotoContainer = document.querySelector(".foto-container");
+      const quienSoySection = document.querySelector("#quien-soy");
+
+      window.addEventListener("scroll", () => {
+        const rectLogo = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Logo central animación
+        let progressLogo = 1 - rectLogo.top / windowHeight;
+        progressLogo = Math.min(Math.max(progressLogo, 0), 1);
+        const distanceLogo = progressLogo * 350;
+        leftWord.style.opacity = progressLogo;
+        rightWord.style.opacity = progressLogo;
+        leftWord.style.transform = `translate(-${distanceLogo}px, -50%)`;
+        rightWord.style.transform = `translate(${distanceLogo}px, -50%)`;
+
+        // Foto y degradado "Quién soy"
+        const rect = quienSoySection.getBoundingClientRect();
+        let progress = 1 - rect.top / windowHeight;
+        progress = Math.min(Math.max(progress, 0), 0.7);
+        const distanceFoto = (progress / 0.7) * 300;
+        fotoContainer.style.transform = `translateY(-50%) translateX(-${distanceFoto}px)`;
+        const distanceDegradado = (progress / 0.7) * 100;
+        quienSoySection.style.setProperty(
+          "--degradado-move",
+          `${-distanceDegradado}px`
+        );
+      });
 
       nextBtn.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % images.length;
         carouselImage.src = images[currentIndex];
       });
     </script>
-    <section id="contacto" class="contact-section">
-      <div class="contact-container">
-        <div class="contact-text">
-          <h2>Hablemos 👋</h2>
-          <p>
-            ¿Tienes un proyecto en mente, una idea o simplemente quieres
-            saludar? Escríbeme y te responderé lo antes posible.
-          </p>
-
-          <div class="contact-social">
-            <p>📍 Dirección: <span>Calle Povedilla 15, 2, 3. 28009, Madrid, España</span></p>
-            <p>
-              📸 Instagram:
-              <a href="https://instagram.com/_isaac.portilloo_" target="_blank">
-                @_isaac.portilloo_
-              </a>
-            </p>
-            <p>
-              💼 LinkedIn:
-              <a href="https://www.linkedin.com/in/isaac-piña-portillo/" target="_blank">
-                Isaac Piña Portillo
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <form
-          class="contact-form"
-          action="mailto:tucorreo@email.com"
-          method="POST"
-          enctype="text/plain"
-        >
-          <input type="text" name="name" placeholder="Tu nombre" required />
-          <input
-            type="email"
-            name="email"
-            placeholder="Tu correo electrónico"
-            required
-          />
-          <textarea name="message" placeholder="Tu mensaje" required></textarea>
-          <button type="submit">Enviar mensaje</button>
-        </form>
-      </div>
-      <div class="contact-footer">
-  © 2025 Isaac Piña Portillo. All rights reserved.
-</div>
-
-    </section>
   </body>
 </html>
