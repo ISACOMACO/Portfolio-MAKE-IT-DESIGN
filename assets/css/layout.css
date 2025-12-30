@@ -1,128 +1,235 @@
-/* --------------------------------------------------------------------------
-   3. Layout Components
-   -------------------------------------------------------------------------- */
-.container {
-  width: min(90%, 1200px);
-  margin-inline: auto;
+/* =========================
+   Body y contenedor principal
+========================= */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "YourFont", sans-serif;
 }
 
-.section {
-  padding: var(--space-2xl) 0;
-}
-
-.section-title {
-  font-size: var(--text-sm); /* tamaño más pequeño */
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--space-xl);
-  text-align: center; /* centrado */
-  background-color: var(--color-accent); /* fondo de color */
-  color: white; /* texto legible sobre el fondo */
-  padding: var(--space-sm) var(--space-md); /* un poco de padding */
-  border-radius: 8px; /* bordes redondeados */
-}
-
-/* --------------------------------------------------------------------------
-   5. Hero Section
-   -------------------------------------------------------------------------- */
-.hero {
-  position: relative;
-  min-height: 100vh;
+main#main {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+/* =========================
+  Hero y cabecera
+========================= */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
+  padding: 2rem 5vw;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  z-index: -1;
+.hero-menu ul {
+  display: flex;
+  gap: 2rem;
 }
 
-@supports (animation-timeline: scroll()) {
-  .parallax-bg {
-    animation: parallaxShift linear both;
-    animation-timeline: scroll(root);
-    animation-range: 0% 100%;
-  }
-
-  @keyframes parallaxShift {
-    from {
-      transform: translateY(0) scale(1);
-    }
-    to {
-      transform: translateY(-15%) scale(1.1);
-    }
-  }
+.hero-title-container {
+  margin: 20vh 5vw;
+  background: #fff;
+  padding: 1rem;
 }
 
-@supports not (animation-timeline: scroll()) {
-  .parallax-bg {
-    background-attachment: fixed;
-  }
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-title {
-  font-size: var(--text-sm); /* más pequeño */
-  font-weight: var(--font-weight-xbold);
-  margin-bottom: var(--space-sm);
-  letter-spacing: var(--tracking-tight);
-  text-align: center; /* centrado */
-  background-color: var(--color-accent); /* fondo de color */
-  color: white;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: 8px;
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: #000;
+  line-height: 1;
 }
 
 .hero-subtitle {
-  font-size: var(--text-base); /* tamaño más legible para subtítulo */
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-lg);
-  text-align: center;
+  font-size: 1.5rem;
+  display: block;
+  margin-top: 0.5rem;
 }
 
-/* Scroll Indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: var(--space-xl);
-  left: 50%;
-  transform: translateX(-50%);
+/* =========================
+ Imagen central
+========================= */
+.image-section {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: var(--space-sm);
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
+  padding: 5vh 5vw;
+  position: relative;
 }
 
-.scroll-arrow {
-  width: 24px;
-  height: 24px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg);
-  animation: bounce 2s infinite;
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: rotate(45deg) translateY(0);
+.center-image-large {
+  max-width: 70%;
+  height: auto;
+}
+
+.word.left,
+.word.right {
+  position: absolute;
+  top: 50%;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 500;
+  transform: translateY(-50%);
+}
+
+/* =========================
+   Quien soy + foto animada
+========================= */
+.quien-soy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5vh 5vw;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.quien-soy .container {
+  flex: 1 1 450px;
+  max-width: 600px;
+}
+
+.foto-container {
+  flex: 1 1 400px;
+  max-width: 500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   Portfolio grid
+========================= */
+.dg-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.dg-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   3D
+========================= */
+.contenido-3d {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.imagen-3d,
+.texto-glass {
+  flex: 1 1 400px;
+}
+
+/* =========================
+  CONTACTO/FOOTER
+========================= */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.contact-form,
+.contact-text {
+  flex: 1 1 400px;
+}
+
+/* =========================
+   Media queries para móviles (900px)
+========================= */
+@media (max-width: 900px) {
+  /* Hero */
+  .hero-top {
+    flex-direction: column;
+    gap: 1rem;
   }
-  40% {
-    transform: rotate(45deg) translateY(10px);
+  .hero-menu ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
   }
-  60% {
-    transform: rotate(45deg) translateY(5px);
+  .hero-title-container {
+    margin: 15vh 3vw;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  /* Imagen central */
+  .center-image-large {
+    max-width: 90%;
+  }
+  .word.left,
+  .word.right {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  /* Quién soy */
+  .quien-soy {
+    flex-direction: column;
+    align-items: center;
+  }
+  .quien-soy .container,
+  .foto-container {
+    max-width: 90%;
+  }
+  .foto-container {
+    margin-top: 2rem;
+  }
+
+  /* Portfolio */
+  .dg-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* 3D */
+  .contenido-3d {
+    flex-direction: column;
+    align-items: center;
+  }
+  .imagen-3d,
+  .texto-glass {
+    max-width: 90%;
+  }
+
+  /* Contacto */
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .contact-form,
+  .contact-text {
+    max-width: 90%;
   }
 }

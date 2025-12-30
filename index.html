@@ -23,7 +23,7 @@
               <li><a href="#illustration">Ilustración</a></li>
               <li><a href="#photography">Fotografía</a></li>
               <li><a href="#3d">3D</a></li>
-              <li><a href="#contact">Contacto</a></li>
+              <div class="hero-about"><a href="#contacto">Contacto</a></div>
             </ul>
           </nav>
         </div>
@@ -78,21 +78,138 @@
 
       <!-- SECCIONES PORTFOLIO -->
       <section id="graphic-design" class="section graphic-design">
-        <div class="container"><h2>Diseño Gráfico</h2></div>
+        <div class="container">
+          <h2>Diseño Gráfico</h2>
+
+          <!-- Sección de Identidad de Marca -->
+          <section class="section-identidad">
+            <!-- Subtítulo específico de esta subsección -->
+            <h3 class="dg-subtitle">
+              1.1. Identidad de Marca. BRUT Creative Studies.
+            </h3>
+          </section>
+
+          <div class="dg-grid">
+            <!-- Fila 1 -->
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/SUBIR%201.jpg"
+                alt="Proyecto 1"
+              />
+            </article>
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/SUBIR22.png"
+                alt="Proyecto 2"
+              />
+            </article>
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/SUBIR33.png"
+                alt="Proyecto 3"
+              />
+            </article>
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/SUBIR4.png"
+                alt="Proyecto 4"
+              />
+            </article>
+
+            <!-- Fila 2 -->
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/SUBIR5.png"
+                alt="Proyecto 5"
+              />
+            </article>
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/SUBIR6.png"
+                alt="Proyecto 6"
+              />
+            </article>
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/SUBIR7.png"
+                alt="Proyecto 7"
+              />
+            </article>
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/SUBIR8.png"
+                alt="Proyecto 8"
+              />
+            </article>
+          </div>
+        </div>
       </section>
 
+      <!-- Segundo apartado: Foto protagonista -->
+      <section class="dg-section">
+        <div class="container">
+          <!-- Título del apartado -->
+          <h3 class="dg-subtitle">
+            1.2 Rebranding Grupo Guadasocial + Diseño de fachada
+          </h3>
+          <!-- Subtexto -->
+          <p class="dg-subtext">
+            Propuesta para renovar la identidad de la marca, creación de manual
+            de marca y diseño de fachada en Guadalajara.
+          </p>
+
+          <!-- Imagen protagonista libre -->
+          <img
+            src="https://ik.imagekit.io/ig1zyhrhpc/G1.png"
+            alt="Propuesta Visual"
+            class="dg-featured-image-free"
+          />
+
+          <!-- Grid opcional de más imágenes debajo -->
+          <div class="dg-grid">
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/GGG1.png"
+                alt="Proyecto 9"
+              />
+            </article>
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/GGG2.png"
+                alt="Proyecto 10"
+              />
+            </article>
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/GG3.png"
+                alt="Proyecto 11"
+              />
+            </article>
+            <article class="dg-card">
+              <img
+                src="https://ik.imagekit.io/ig1zyhrhpc/GGG4.png"
+                alt="Proyecto 12"
+              />
+            </article>
+          </div>
+        </div>
+      </section>
       <section id="illustration" class="section illustration">
-        <div class="container"><h2>Ilustración</h2></div>
-        <div style="display: flex; width: 100vw; margin: 0; padding: 0">
-          <div style="flex: 1; margin: 0">
+        <div class="container">
+          <!-- Título alineado a la izquierda -->
+          <h2 style="text-align: left">Ilustración</h2>
+
+          <!-- Imagen grande estática SIN HOVER -->
+          <div class="illustration-large">
             <img
-              src="https://ik.imagekit.io/ig1zyhrhpc/I1.png?updatedAt=1766928279612"
-              alt="Ilustración 1"
-              style="width: 100%; height: auto; display: block"
+              src="https://ik.imagekit.io/ig1zyhrhpc/ILUSTRACION%20GRANDE.png"
+              alt="Ilustración principal"
+              class="ilustracion-grande"
             />
           </div>
-          <div style="display: flex; width: 100vw; margin: 0; padding: 0">
-            <!-- Ilustración 1 -->
+
+          <!-- Grid de ilustraciones con hover -->
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap">
             <div class="illustration">
               <img
                 src="https://ik.imagekit.io/ig1zyhrhpc/I1.png?updatedAt=1766928279612"
@@ -100,8 +217,6 @@
               />
               <div class="overlay">Ilustración de San Francisco</div>
             </div>
-
-            <!-- Ilustración 3 -->
             <div class="illustration">
               <img
                 src="https://ik.imagekit.io/ig1zyhrhpc/I3.png?updatedAt=1766928480994"
@@ -109,8 +224,6 @@
               />
               <div class="overlay">Ilustración para Premios Forqué 2023</div>
             </div>
-
-            <!-- Ilustración 2 -->
             <div class="illustration">
               <img
                 src="https://ik.imagekit.io/ig1zyhrhpc/I2.png?updatedAt=1766928468199"
@@ -125,6 +238,7 @@
       <section id="photography" class="section photography">
         <div class="photography-container">
           <div class="photography-left">
+            <!-- FOTOGRAFÍA -->
             <h2>Fotografía</h2>
             <div class="photo-carousel">
               <img
@@ -152,7 +266,6 @@
         </div>
       </section>
 
-      <!-- SECCIÓN 3D -->
       <!-- SECCIÓN 3D -->
       <section id="3d" class="seccion-3d">
         <!-- Título de la sección -->

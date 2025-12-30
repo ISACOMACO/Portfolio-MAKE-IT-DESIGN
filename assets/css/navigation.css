@@ -1,46 +1,136 @@
-/* --------------------------------------------------------------------------
-   4. Navigation
-   -------------------------------------------------------------------------- */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: rgba(15, 15, 15, 0.9);
-  backdrop-filter: blur(10px);
-  padding: var(--space-md) 0;
-}
-
-.site-header .main-nav {
+/* =========================
+   CABECERA / HERO TOP
+========================= */
+.hero-top {
+  background: #000;
+  width: 100%;
+  padding: 2rem 2vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: min(90%, 1200px);
-  margin-inline: auto;
+  position: fixed; /* Mantener siempre visible */
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-.site-header h1 {
-  font-size: var(--text-xl);
-  font-weight: var(--font-weight-bold);
-  margin: 0;
+/* Link “Quién soy” en la cabecera */
+.hero .hero-top .hero-about {
+  font-family: "YourFont", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #ffffff !important;
+  transition: color 0.3s ease;
 }
 
-.main-nav ul {
+.hero .hero-top .hero-about:hover {
+  color: #f0f0f0;
+}
+
+/* =========================
+   MENÚ DE NAVEGACIÓN
+========================= */
+.hero-menu {
   display: flex;
-  gap: var(--space-lg);
+  justify-content: center;
+  flex: 1;
+}
+
+.hero-menu ul {
   list-style: none;
-  margin: 0;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
   padding: 0;
+  margin: 0;
 }
 
-.main-nav a {
-  color: var(--color-text-muted);
+.hero-menu a {
+  font-family: "YourFont", sans-serif;
+  font-size: 1.5rem;
   text-decoration: none;
-  transition: color 0.3s;
+  color: #fff;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.main-nav a:hover,
-.main-nav a:focus {
-  color: var(--color-accent);
+.hero-menu a:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* =========================
+   FOOTER / ENLACES
+========================= */
+.contact-social a,
+.footer-repo-link {
+  color: #fff;
+  text-decoration: underline;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contact-social a:hover,
+.footer-repo-link:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+/* =========================
+   BOTÓN “BACK TO TOP”
+========================= */
+.back-to-top {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  padding: 18px 42px;
+  border-radius: 40px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #e5e5e5;
+  transform: scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE NAVIGATION
+========================= */
+@media (max-width: 900px) {
+  .hero-menu ul {
+    gap: 1.5rem;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    padding-top: 5rem;
+    transition: right 0.3s ease;
+  }
+
+  .hero-menu ul.active {
+    right: 0;
+  }
+
+  .hero-menu a {
+    font-size: 1.8rem;
+  }
+
+  .back-to-top {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+  }
+
+  .footer-repo-link {
+    font-size: 1.1rem;
+  }
 }
